@@ -21,6 +21,8 @@ input,textarea{font:inherit}input[type=date],textarea{width:100%;border:1px soli
 .phase{background:linear-gradient(145deg,#171020,#100b14);border:1px solid #3a2947;border-radius:17px;padding:15px}.phase-title{display:flex;gap:10px;align-items:center}.emoji{font-size:29px}.badge{display:inline-block;padding:6px 9px;border-radius:99px;font-size:11px;font-weight:800;background:#ffffff0d;border:1px solid #ffffff14;margin-top:7px}.pink{color:#ff8fc7}.violet{color:#c19aff}.gold{color:#ffe083}.blue{color:#93e0ff}.green{color:#8ce2b7}
 ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-size:12px;color:#a99eae;background:#ffffff07;padding:11px;border-radius:13px;margin-top:10px;border:1px solid #ffffff0a}.history{padding:13px 0;border-bottom:1px solid #2b2132;display:flex;justify-content:space-between;gap:12px}.history:last-child{border:0}.history strong{color:#ffb1d5}.history small{color:var(--muted)}.hidden{display:none}footer{text-align:center;color:#8f8394;font-size:12px;line-height:1.55;padding:12px 6px}
 @media(max-width:480px){main{padding:11px 9px}.card{padding:14px}.grid{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.day{min-height:46px}}
+
+.phase-card{cursor:pointer;transition:.2s ease}.phase-card:hover{border-color:#6a426f}.phase-card .phase-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid #ffffff12}.phase-card.open .phase-detail{display:block}.phase-card .chev{float:right;opacity:.65;font-size:14px}.phase-detail h4{margin:10px 0 5px;font-size:13px}.phase-detail p,.phase-detail li{font-size:13px;line-height:1.55}.phase-detail ul{padding-left:20px;margin:6px 0}.rhythmik-line{color:#ff8fc7;font-weight:700}
 </style>
 </head>
 <body><main>
@@ -38,11 +40,74 @@ ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-s
 
 <section class="card"><div class="phase"><div class="phase-title"><span class="emoji" id="selEmoji">🎧</span><div><h3 id="selTitle">Escolha uma data</h3><div class="muted" id="selDate">—</div></div></div><p class="muted" id="selDesc">Toque em um dia do calendário para acompanhar a sua própria batida/fluxo.</p><div id="selTips"></div></div></section>
 
-<section class="card"><div class="kicker">Conheça as fases</div><h2>🎶 Entenda seus hormônios para ficar em harmonia.</h2><p class="muted">As fases são uma forma educativa de entender as mudanças hormonais. Em adolescentes, o ciclo pode variar bastante.</p>
-<div class="phase" style="margin-top:10px"><span class="badge pink">🩷 Menstruação</span><p class="muted">O útero elimina o revestimento que não foi necessário naquele ciclo.</p></div>
-<div class="phase" style="margin-top:8px"><span class="badge violet">🌱 Fase folicular</span><p class="muted">Os hormônios vão mudando e o corpo se prepara para uma possível ovulação.</p></div>
-<div class="phase" style="margin-top:8px"><span class="badge gold">✨ Ovulação estimada</span><p class="muted">É uma estimativa da época em que a ovulação pode acontecer.</p></div>
-<div class="phase" style="margin-top:8px"><span class="badge blue">🌙 Fase lútea</span><p class="muted">Depois da ovulação, os hormônios mudam novamente até a próxima menstruação.</p></div>
+<section class="card"><div class="kicker">Conheça as fases</div><h2>🎶 Entenda seus hormônios para ficar em harmonia.</h2><p class="muted">As fases ajudam a entender, de forma educativa, como os hormônios podem mudar ao longo do ciclo. Em adolescentes, o ciclo pode variar bastante. <b>Toque em uma fase para saber mais.</b></p>
+
+<div class="phase phase-card" style="margin-top:10px" onclick="togglePhaseCard(this)">
+<span class="badge pink">🩸 Menstruação — Soft Start</span><span class="chev">＋</span>
+<p class="muted">O corpo elimina o revestimento do útero e começa um novo ciclo.</p>
+<div class="phase-detail">
+<h4>🌙 Como você pode se sentir</h4>
+<p>Algumas pessoas sentem mais cansaço, cólicas, dor de cabeça, mudanças no intestino ou vontade de descansar. Outras se sentem normalmente. Cada corpo tem seu próprio ritmo.</p>
+<ul>
+<li>💤 <b>Sono:</b> você pode sentir mais necessidade de descansar.</li>
+<li>🍜 <b>Apetite:</b> a fome pode mudar.</li>
+<li>💧 <b>Corpo:</b> pode aparecer sensação de inchaço.</li>
+<li>🧠 <b>Humor e foco:</b> dor, desconforto ou sono ruim podem influenciar o humor e a concentração.</li>
+<li>💃 <b>Movimento:</b> se estiver se sentindo bem, dança, caminhada, bicicleta, natação e outros exercícios podem continuar. Se estiver cansada ou com desconforto, tudo bem diminuir o ritmo.</li>
+</ul>
+<p class="rhythmik-line">🎧 RhythmiK: “Nem todo comeback começa com um dance break. Hoje pode ser dia de coreografia completa ou de ensaio mais tranquilo.”</p>
+</div></div>
+
+<div class="phase phase-card" style="margin-top:8px" onclick="togglePhaseCard(this)">
+<span class="badge violet">🌱 Fase folicular — Training Era</span><span class="chev">＋</span>
+<p class="muted">Os hormônios vão mudando enquanto o corpo se prepara para uma possível ovulação.</p>
+<div class="phase-detail">
+<h4>🌱 Seu corpo está entrando em uma nova fase.</h4>
+<p>O estradiol começa a aumentar enquanto um folículo no ovário se desenvolve.</p>
+<ul>
+<li>⚡ Algumas pessoas percebem aumento gradual de energia e disposição.</li>
+<li>🧠 A concentração pode parecer diferente.</li>
+<li>😴 O sono pode variar.</li>
+<li>🍓 O apetite também pode mudar.</li>
+<li>💃 <b>Movimento:</b> escolha atividades de acordo com sua energia. Dança, esportes, caminhada, corrida ou exercícios de força adequados à sua idade podem fazer parte da rotina quando você estiver se sentindo bem.</li>
+</ul>
+<p class="rhythmik-line">🎤 RhythmiK: “Todo comeback tem uma Training Era. Descubra qual é o seu ritmo de treino.”</p>
+</div></div>
+
+<div class="phase phase-card" style="margin-top:8px" onclick="togglePhaseCard(this)">
+<span class="badge gold">✨ Ovulação estimada — Main Stage</span><span class="chev">＋</span>
+<p class="muted">É uma estimativa da época em que a ovulação pode acontecer.</p>
+<div class="phase-detail">
+<h4>⭐ Main Stage!</h4>
+<p>Nesta fase acontece uma importante mudança hormonal. O estradiol atinge níveis elevados e ocorre um aumento do LH relacionado à ovulação.</p>
+<ul>
+<li>⚡ Algumas pessoas percebem mais disposição.</li>
+<li>😊 Algumas percebem mudanças no humor.</li>
+<li>💧 O muco cervical também pode mudar.</li>
+<li>🌡️ A temperatura corporal basal pode apresentar uma pequena alteração depois da ovulação.</li>
+<li>💃 <b>Movimento:</b> se estiver com bastante energia, aproveite para fazer uma atividade que você gosta. Se não estiver, não existe obrigação de acompanhar nenhum “nível ideal”.</li>
+</ul>
+<p class="rhythmik-line">🎧 RhythmiK: “Você está no Main Stage hoje? Escolha a música que combina com sua energia.”</p>
+<p class="note"><b>🔬 Importante:</b> “Ovulação estimada” é uma previsão baseada nos dados registrados. Não significa que sabemos exatamente quando ela aconteceu.</p>
+</div></div>
+
+<div class="phase phase-card" style="margin-top:8px" onclick="togglePhaseCard(this)">
+<span class="badge blue">🌙 Fase lútea — Slow Down</span><span class="chev">＋</span>
+<p class="muted">Depois da ovulação, os hormônios mudam novamente até a próxima menstruação.</p>
+<div class="phase-detail">
+<h4>🌙 Slow Down Era</h4>
+<p>Depois da ovulação, a progesterona aumenta e o corpo entra em uma nova etapa do ciclo.</p>
+<ul>
+<li>🌡️ A temperatura basal costuma ficar um pouco mais elevada.</li>
+<li>💧 Algumas pessoas percebem mais inchaço.</li>
+<li>🍜 O apetite pode aumentar ou mudar.</li>
+<li>💤 O sono pode ficar diferente.</li>
+<li>🧠 Algumas pessoas percebem alterações no foco ou no humor.</li>
+<li>💜 Podem aparecer sensibilidade nas mamas, dor de cabeça ou outros sintomas pré-menstruais.</li>
+<li>💃 <b>Movimento:</b> não existe um exercício obrigatório para essa fase. Se estiver bem, mantenha suas atividades. Se estiver cansada, experimente reduzir a intensidade.</li>
+</ul>
+<p class="rhythmik-line">🎤 RhythmiK: “Nem todo dia precisa ser 100%. Até os idols precisam de descanso.”</p>
+</div></div>
 <div class="notice"><b>Você está crescendo.</b> É comum o ciclo ser irregular nos primeiros anos. Se algo estiver muito diferente, converse com um adulto de confiança e um profissional de saúde.</div></section>
 
 <section class="card"><h2>🩷 Registrar menstruação</h2><p class="muted">Marque o primeiro dia do sangramento. Se souber, informe também quando terminou.</p>
@@ -143,4 +208,10 @@ setInterval(()=>{const d=new Date();if(iso(d)!==iso(selected)&&d.getHours()>=0){
 if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
 })();
 </script>
-</body></html>
+<script>
+function togglePhaseCard(card){
+  card.classList.toggle("open");
+  const chev=card.querySelector(".chev");
+  if(chev)chev.textContent=card.classList.contains("open")?"−":"＋";
+}
+</script></body></html>
