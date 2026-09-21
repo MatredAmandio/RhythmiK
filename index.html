@@ -124,7 +124,7 @@ const el={
  periodStart:$("periodStart"),periodEnd:$("periodEnd"),add:$("add"),notes:$("notes"),saveCheckin:$("saveCheckin"),checkSummary:$("checkSummary"),history:$("history"),
  backup:$("backup"),restore:$("restore"),file:$("file"),clear:$("clear"),helpMessage:$("helpMessage"),copyHelp:$("copyHelp")
 };
-const seed={periods:[{start:"2026-08-10",end:"2026-08-17"},{start:"2026-09-02",end:null}],notes:"",checkins:{}};
+const seed={periods:[],notes:"",checkins:{}};
 let data=load();
 let now=new Date(), view=new Date(now.getFullYear(),now.getMonth(),1), selected=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 
