@@ -208,5 +208,10 @@ function togglePhaseCard(card){
   card.classList.toggle("open");
   const chev=card.querySelector(".chev");
   if(chev)chev.textContent=card.classList.contains("open")?"−":"＋";
+  card.setAttribute("aria-expanded",card.classList.contains("open")?"true":"false");
 }
+document.querySelectorAll(".phase-card").forEach(card=>{
+  card.setAttribute("role","button");card.setAttribute("tabindex","0");card.setAttribute("aria-expanded","false");
+  card.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();togglePhaseCard(card)}});
+});
 </script></body></html>
