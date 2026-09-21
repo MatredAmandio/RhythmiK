@@ -23,6 +23,8 @@ ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-s
 @media(max-width:480px){main{padding:11px 9px}.card{padding:14px}.grid{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.day{min-height:46px}}
 
 .phase-card{cursor:pointer;transition:.2s ease}.phase-card:hover{border-color:#6a426f}.phase-card .phase-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid #ffffff12}.phase-card.open .phase-detail{display:block}.phase-card .chev{float:right;opacity:.65;font-size:14px}.phase-detail h4{margin:10px 0 5px;font-size:13px}.phase-detail p,.phase-detail li{font-size:13px;line-height:1.55}.phase-detail ul{padding-left:20px;margin:6px 0}.rhythmik-line{color:#ff8fc7;font-weight:700}
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.check-group{border:1px solid var(--border);border-radius:15px;padding:11px;background:#ffffff05}.check-group legend{padding:0 5px;color:#eaddea;font-size:12px;font-weight:800}.choices{display:flex;gap:6px;flex-wrap:wrap}.choice input{position:absolute;opacity:0;pointer-events:none}.choice span{display:inline-block;padding:8px 10px;border-radius:99px;border:1px solid #44334e;background:#130d19;color:#d8cbdc;font-size:12px;cursor:pointer}.choice input:checked+span{background:#ff4fa32b;border-color:var(--pink);color:#fff;box-shadow:0 0 0 2px #ff4fa31f}.check-summary{font-size:12px;color:var(--muted);margin-top:8px}.help-card{border-color:#7b365b;background:linear-gradient(145deg,#29101e,#120b14)}.help-options{display:grid;gap:7px;margin:10px 0}.help-option{width:100%;text-align:left}.help-message{white-space:pre-wrap;background:#0c0910;border:1px solid var(--border);border-radius:13px;padding:12px;line-height:1.5;margin:10px 0}.source-list a{color:#cba8ff}.privacy{display:flex;gap:9px;align-items:flex-start}.tiny{font-size:11px;line-height:1.5;color:#918596}
+@media(max-width:540px){.check-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body><main>
@@ -40,101 +42,89 @@ ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-s
 
 <section class="card"><div class="phase"><div class="phase-title"><span class="emoji" id="selEmoji">🎧</span><div><h3 id="selTitle">Escolha uma data</h3><div class="muted" id="selDate">—</div></div></div><p class="muted" id="selDesc">Toque em um dia do calendário para acompanhar a sua própria batida/fluxo.</p><div id="selTips"></div></div></section>
 
-<section class="card"><div class="kicker">Conheça as fases</div><h2>🎶 Entenda seus hormônios para ficar em harmonia.</h2><p class="muted">As fases ajudam a entender, de forma educativa, como os hormônios podem mudar ao longo do ciclo. Em adolescentes, o ciclo pode variar bastante. <b>Toque em uma fase para saber mais.</b></p>
+<section class="card"><div class="kicker">Conheça o seu ciclo</div><h2>🎶 Quatro eras, um ritmo só seu</h2><p class="muted">Seu corpo não precisa seguir um roteiro perfeito. Estas áreas explicam o que <b>pode</b> acontecer, sem dizer o que você tem que sentir. Toque para abrir.</p>
 
 <div class="phase phase-card" style="margin-top:10px" onclick="togglePhaseCard(this)">
-<span class="badge pink">🩸 Menstruação — Soft Start</span><span class="chev">＋</span>
-<p class="muted">O corpo elimina o revestimento do útero e começa um novo ciclo.</p>
-<div class="phase-detail">
-<h4>🌙 Como você pode se sentir</h4>
-<p>Algumas pessoas sentem mais cansaço, cólicas, dor de cabeça, mudanças no intestino ou vontade de descansar. Outras se sentem normalmente. Cada corpo tem seu próprio ritmo.</p>
-<ul>
-<li>💤 <b>Sono:</b> você pode sentir mais necessidade de descansar.</li>
-<li>🍜 <b>Apetite:</b> a fome pode mudar.</li>
-<li>💧 <b>Corpo:</b> pode aparecer sensação de inchaço.</li>
-<li>🧠 <b>Humor e foco:</b> dor, desconforto ou sono ruim podem influenciar o humor e a concentração.</li>
-<li>💃 <b>Movimento:</b> se estiver se sentindo bem, dança, caminhada, bicicleta, natação e outros exercícios podem continuar. Se estiver cansada ou com desconforto, tudo bem diminuir o ritmo.</li>
-</ul>
-<p class="rhythmik-line">🎧 RhythmiK: “Nem todo comeback começa com um dance break. Hoje pode ser dia de coreografia completa ou de ensaio mais tranquilo.”</p>
-</div></div>
+<span class="badge violet">🌱 Antes da primeira menstruação — Discovery Era</span><span class="chev">＋</span>
+<p class="muted">Mudanças do crescimento e um kit simples para você se sentir preparada.</p>
+<div class="phase-detail"><h4>✨ Seu corpo está crescendo no ritmo dele</h4>
+<p>Antes da primeira menstruação, os seios podem começar a crescer, podem aparecer pelos, a pele pode ficar mais oleosa e uma secreção clara ou esbranquiçada pode surgir na calcinha. Essas mudanças costumam fazer parte da puberdade.</p>
+<h4>🎒 Mini kit de estreia</h4><ul><li>Absorvente.</li><li>Calcinha extra.</li><li>Saquinho para guardar uma roupa usada.</li><li>Contato de um adulto de confiança.</li></ul>
+<p class="rhythmik-line">🎤 RhythmiK: “Toda nova era começa nos bastidores. Preparar seu kit pode deixar a estreia mais tranquila.”</p>
+<div class="notice">Coceira, dor ou secreção com cheiro forte merecem uma conversa com um adulto e um profissional de saúde.</div></div></div>
 
 <div class="phase phase-card" style="margin-top:8px" onclick="togglePhaseCard(this)">
-<span class="badge violet">🌱 Fase folicular — Training Era</span><span class="chev">＋</span>
-<p class="muted">Os hormônios vão mudando enquanto o corpo se prepara para uma possível ovulação.</p>
-<div class="phase-detail">
-<h4>🌱 Seu corpo está entrando em uma nova fase.</h4>
-<p>O estradiol começa a aumentar enquanto um folículo no ovário se desenvolve.</p>
-<ul>
-<li>⚡ Algumas pessoas percebem aumento gradual de energia e disposição.</li>
-<li>🧠 A concentração pode parecer diferente.</li>
-<li>😴 O sono pode variar.</li>
-<li>🍓 O apetite também pode mudar.</li>
-<li>💃 <b>Movimento:</b> escolha atividades de acordo com sua energia. Dança, esportes, caminhada, corrida ou exercícios de força adequados à sua idade podem fazer parte da rotina quando você estiver se sentindo bem.</li>
-</ul>
-<p class="rhythmik-line">🎤 RhythmiK: “Todo comeback tem uma Training Era. Descubra qual é o seu ritmo de treino.”</p>
-</div></div>
+<span class="badge blue">🎧 Antes da menstruação — Check-in Era</span><span class="chev">＋</span>
+<p class="muted">TPM, fome, vontade de doce, sede, sono e emoções sem culpa.</p>
+<div class="phase-detail"><h4>O que é TPM?</h4>
+<p>TPM é o nome dado a mudanças que podem aparecer nos dias antes da menstruação e melhorar quando ela começa ou pouco depois. Você pode notar irritação, vontade de chorar, cansaço, inchaço, dor de cabeça, cólica ou mudança no apetite. Nem todo mundo sente TPM.</p>
+<h4>🍓 Por que a fome ou a vontade de doce muda?</h4><p>As mudanças do ciclo podem influenciar o apetite, a energia e o humor. A vontade de doce também pode aparecer por fome, costume, ansiedade ou pouco sono. Comer não é falta de controle e nenhum alimento precisa receber o título de “vilão”.</p>
+<h4>💧 E a sede?</h4><p>Algumas pessoas percebem mais sede, mas calor, exercícios e alimentos salgados também influenciam. Água ao longo do dia ajuda. Sede muito forte e persistente, principalmente com muita vontade de fazer xixi, deve ser contada a um adulto.</p>
+<p class="rhythmik-line">🎧 RhythmiK: “Mood diferente não é drama. É uma pista — registre, observe e cuide de você.”</p></div></div>
 
 <div class="phase phase-card" style="margin-top:8px" onclick="togglePhaseCard(this)">
-<span class="badge gold">✨ Ovulação estimada — Main Stage</span><span class="chev">＋</span>
-<p class="muted">É uma estimativa da época em que a ovulação pode acontecer.</p>
-<div class="phase-detail">
-<h4>⭐ Main Stage!</h4>
-<p>Nesta fase acontece uma importante mudança hormonal. O estradiol atinge níveis elevados e ocorre um aumento do LH relacionado à ovulação.</p>
-<ul>
-<li>⚡ Algumas pessoas percebem mais disposição.</li>
-<li>😊 Algumas percebem mudanças no humor.</li>
-<li>💧 O muco cervical também pode mudar.</li>
-<li>🌡️ A temperatura corporal basal pode apresentar uma pequena alteração depois da ovulação.</li>
-<li>💃 <b>Movimento:</b> se estiver com bastante energia, aproveite para fazer uma atividade que você gosta. Se não estiver, não existe obrigação de acompanhar nenhum “nível ideal”.</li>
-</ul>
-<p class="rhythmik-line">🎧 RhythmiK: “Você está no Main Stage hoje? Escolha a música que combina com sua energia.”</p>
-<p class="note"><b>🔬 Importante:</b> “Ovulação estimada” é uma previsão baseada nos dados registrados. Não significa que sabemos exatamente quando ela aconteceu.</p>
-</div></div>
+<span class="badge pink">🩸 Durante a menstruação — Care Era</span><span class="chev">＋</span>
+<p class="muted">Fluxo, cores, cólica, higiene e autocuidado.</p>
+<div class="phase-detail"><h4>🥁 Por que aparece cólica?</h4>
+<p>O útero faz contrações para ajudar a eliminar o sangue e o tecido menstrual. Substâncias chamadas prostaglandinas participam desses movimentos e podem causar dor na barriga, nas costas ou nas pernas.</p>
+<ul><li>Uma bolsa morna pode trazer conforto.</li><li>Movimento leve ou descanso podem ajudar — escolha o que faz bem para você.</li><li>Troque o absorvente regularmente e lave apenas a parte externa da vulva com água e sabonete suave.</li><li>Não tome remédio sozinha: peça ajuda a um adulto.</li></ul>
+<p>A cor pode variar entre vermelho vivo, vermelho escuro e marrom. Isso costuma acontecer conforme o sangue sai mais rápido ou mais devagar.</p>
+<p class="rhythmik-line">🎤 RhythmiK: “Hoje pode ser show completo ou versão acústica. Respeitar seu ritmo também é brilhar.”</p></div></div>
 
 <div class="phase phase-card" style="margin-top:8px" onclick="togglePhaseCard(this)">
-<span class="badge blue">🌙 Fase lútea — Slow Down</span><span class="chev">＋</span>
-<p class="muted">Depois da ovulação, os hormônios mudam novamente até a próxima menstruação.</p>
-<div class="phase-detail">
-<h4>🌙 Slow Down Era</h4>
-<p>Depois da ovulação, a progesterona aumenta e o corpo entra em uma nova etapa do ciclo.</p>
-<ul>
-<li>🌡️ A temperatura basal costuma ficar um pouco mais elevada.</li>
-<li>💧 Algumas pessoas percebem mais inchaço.</li>
-<li>🍜 O apetite pode aumentar ou mudar.</li>
-<li>💤 O sono pode ficar diferente.</li>
-<li>🧠 Algumas pessoas percebem alterações no foco ou no humor.</li>
-<li>💜 Podem aparecer sensibilidade nas mamas, dor de cabeça ou outros sintomas pré-menstruais.</li>
-<li>💃 <b>Movimento:</b> não existe um exercício obrigatório para essa fase. Se estiver bem, mantenha suas atividades. Se estiver cansada, experimente reduzir a intensidade.</li>
-</ul>
-<p class="rhythmik-line">🎤 RhythmiK: “Nem todo dia precisa ser 100%. Até os idols precisam de descanso.”</p>
-</div></div>
-<div class="notice"><b>Você está crescendo.</b> É comum o ciclo ser irregular nos primeiros anos. Se algo estiver muito diferente, converse com um adulto de confiança e um profissional de saúde.</div></section>
+<span class="badge green">⚡ Depois da menstruação — New Rhythm Era</span><span class="chev">＋</span>
+<p class="muted">Uma nova etapa começa, mas não existe energia obrigatória.</p>
+<div class="phase-detail"><p>Depois que o sangramento termina, os hormônios continuam mudando. Algumas pessoas percebem mais disposição ou concentração; outras não sentem diferença. As duas experiências podem ser normais.</p>
+<p>Observe energia, sono, fome, sede, pele, emoções e qualquer desconforto. Esses registros ajudam você a conhecer seu padrão — não a comparar seu corpo com o de outras pessoas.</p>
+<p class="rhythmik-line">🎧 RhythmiK: “Nova era, mesma estrela: você. Seu ritmo não precisa copiar o de ninguém.”</p></div></div>
+<div class="notice"><b>Você está crescendo.</b> Nos primeiros anos, os ciclos podem variar. As datas do RhythmiK são estimativas educativas, não promessas.</div></section>
 
 <section class="card"><h2>🩷 Registrar menstruação</h2><p class="muted">Marque o primeiro dia do sangramento. Se souber, informe também quando terminou.</p>
 <div class="field"><label for="periodStart">Começou em</label><input type="date" id="periodStart"></div><div class="field"><label for="periodEnd">Terminou em (opcional)</label><input type="date" id="periodEnd"></div><div class="actions"><button class="btn" id="add" type="button">Adicionar ao meu ritmo</button></div></section>
 
-<section class="card"><h2>💭 Como você está se sentindo?</h2><textarea id="notes" placeholder="Humor, energia, cólica, sono, vontade de ficar quietinha..."></textarea><div class="actions" style="margin-top:9px"><button class="btn" id="saveNotes" type="button">Salvar observação</button></div></section>
+<section class="card"><div class="kicker">Check-in de 10 segundos</div><h2>🎤 Como está o seu mood hoje?</h2><p class="muted">Marque apenas o que quiser. Não existe resposta certa.</p>
+<div class="check-grid">
+<fieldset class="check-group"><legend>😊 Humor</legend><div class="choices"><label class="choice"><input type="radio" name="mood" value="tranquila"><span>😌 Tranquila</span></label><label class="choice"><input type="radio" name="mood" value="sensivel"><span>🥺 Sensível</span></label><label class="choice"><input type="radio" name="mood" value="irritada"><span>😤 Irritada</span></label></div></fieldset>
+<fieldset class="check-group"><legend>⚡ Energia</legend><div class="choices"><label class="choice"><input type="radio" name="energy" value="baixa"><span>🪫 Baixa</span></label><label class="choice"><input type="radio" name="energy" value="media"><span>🌙 Média</span></label><label class="choice"><input type="radio" name="energy" value="alta"><span>⚡ Alta</span></label></div></fieldset>
+<fieldset class="check-group"><legend>🍓 Apetite</legend><div class="choices"><label class="choice"><input type="radio" name="appetite" value="menor"><span>Menor</span></label><label class="choice"><input type="radio" name="appetite" value="igual"><span>Igual</span></label><label class="choice"><input type="radio" name="appetite" value="maior"><span>Maior</span></label><label class="choice"><input type="checkbox" id="sweet"><span>🍫 Doce</span></label></div></fieldset>
+<fieldset class="check-group"><legend>💧 Sede</legend><div class="choices"><label class="choice"><input type="radio" name="thirst" value="normal"><span>Normal</span></label><label class="choice"><input type="radio" name="thirst" value="maior"><span>Maior</span></label></div></fieldset>
+<fieldset class="check-group"><legend>🌙 Sono</legend><div class="choices"><label class="choice"><input type="radio" name="sleep" value="bom"><span>Bom</span></label><label class="choice"><input type="radio" name="sleep" value="medio"><span>Mais ou menos</span></label><label class="choice"><input type="radio" name="sleep" value="ruim"><span>Ruim</span></label></div></fieldset>
+<fieldset class="check-group"><legend>🌸 Cólica</legend><div class="choices"><label class="choice"><input type="radio" name="cramps" value="nenhuma"><span>Nenhuma</span></label><label class="choice"><input type="radio" name="cramps" value="leve"><span>Leve</span></label><label class="choice"><input type="radio" name="cramps" value="moderada"><span>Moderada</span></label><label class="choice"><input type="radio" name="cramps" value="forte"><span>Forte</span></label></div></fieldset>
+</div>
+<div class="field"><label for="notes">Quer contar mais alguma coisa?</label><textarea id="notes" placeholder="Escreva do seu jeito..."></textarea></div><div class="actions"><button class="btn" id="saveCheckin" type="button">Salvar meu check-in</button></div><div id="checkSummary" class="check-summary"></div></section>
+
+<section class="card"><div class="kicker">Dúvidas sem vergonha</div><h2>💡 Isso é normal?</h2><p class="muted">Toque na pergunta que parece com a sua.</p>
+<div class="phase phase-card" onclick="togglePhaseCard(this)"><b>Meu sangue está marrom.</b><span class="chev">＋</span><div class="phase-detail"><p>Pode acontecer quando o sangue leva mais tempo para sair e escurece em contato com o ar. Se houver dor forte, cheiro ruim, coceira ou preocupação, fale com um adulto.</p></div></div>
+<div class="phase phase-card" style="margin-top:7px" onclick="togglePhaseCard(this)"><b>Minha menstruação não veio no dia previsto.</b><span class="chev">＋</span><div class="phase-detail"><p>Nos primeiros anos, o ciclo pode ser irregular. A previsão é apenas uma estimativa. Se passar cerca de 90 dias sem menstruar, conte a um adulto e procure orientação de saúde.</p></div></div>
+<div class="phase phase-card" style="margin-top:7px" onclick="togglePhaseCard(this)"><b>Estou com muita fome ou vontade de doce.</b><span class="chev">＋</span><div class="phase-detail"><p>O apetite pode mudar antes da menstruação, mas sono, rotina e emoções também influenciam. Coma sem culpa. Se comer causar medo, culpa ou sofrimento, converse com um adulto de confiança.</p></div></div>
+<div class="phase phase-card" style="margin-top:7px" onclick="togglePhaseCard(this)"><b>Minha roupa manchou na escola.</b><span class="chev">＋</span><div class="phase-detail"><p>Respire: isso acontece. Procure um absorvente e peça ajuda a uma professora, funcionária ou amiga de confiança. Um casaco na cintura pode ajudar até você conseguir uma troca de roupa.</p></div></div></section>
+
+<section class="card help-card"><div class="kicker">Você não precisa lidar sozinha</div><h2>💬 Quero falar com um adulto</h2><p class="muted">Escolha uma situação. O RhythmiK prepara a mensagem, mas só você decide se quer copiá-la e mostrar ou enviar.</p><div class="help-options">
+<button class="btn secondary help-option" type="button" data-help="pain">Estou com muita dor</button><button class="btn secondary help-option" type="button" data-help="bleeding">Meu sangramento está muito forte</button><button class="btn secondary help-option" type="button" data-help="scared">Estou assustada</button><button class="btn secondary help-option" type="button" data-help="sad">Estou muito triste</button><button class="btn secondary help-option" type="button" data-help="first">Quero contar que menstruei</button></div><div id="helpMessage" class="help-message hidden"></div><button class="btn hidden" id="copyHelp" type="button">Copiar mensagem</button>
+<div class="notice"><b>Peça ajuda agora</b> se houver desmaio, fraqueza intensa, dor que impede suas atividades, sangramento que encharca um absorvente em 1 a 2 horas repetidamente, ou se você pensar em se machucar. Procure imediatamente um adulto de confiança e atendimento de saúde.</div></section>
 
 <section class="card"><h2>🗓️ Histórico</h2><p class="muted">Seus registros aparecem aqui e ajudam o app a calcular uma média mais pessoal dos seus ciclos.</p><div id="history"></div></section>
 
-<section class="card"><h2>💾 Seus dados</h2><p class="muted">Os registros ficam neste aparelho. Faça um backup antes de trocar de celular.</p><div class="actions"><button class="btn secondary" id="backup" type="button">Fazer backup</button><button class="btn secondary" id="restore" type="button">Restaurar backup</button><input class="hidden" type="file" id="file" accept="application/json"><button class="btn danger" id="clear" type="button">Apagar dados</button></div></section>
+<section class="card"><h2>💾 Seus dados</h2><div class="privacy"><span>🔒</span><p class="muted" style="margin-top:0">Os registros ficam somente neste aparelho e não são enviados pelo RhythmiK. Faça um backup antes de trocar de celular ou remover o aplicativo.</p></div><div class="actions"><button class="btn secondary" id="backup" type="button">Fazer backup</button><button class="btn secondary" id="restore" type="button">Restaurar backup</button><input class="hidden" type="file" id="file" accept="application/json"><button class="btn danger" id="clear" type="button">Apagar dados</button></div></section>
 
-<footer>As estimativas são educativas e calculadas com seus próprios registros. Quanto mais ciclos completos forem registrados, melhor a média pessoal tende a ficar — mas ela nunca garante a data real da ovulação ou da próxima menstruação. Não use o calendário para evitar gravidez.</footer>
+<section class="card source-list"><h2>🩺 Informação com cuidado</h2><p class="muted">Conteúdo educativo baseado em orientações de ginecologia pediátrica e do adolescente e pediatria. Não substitui consulta.</p><ul class="tiny"><li><a href="https://www.naspag.org/" target="_blank" rel="noopener">NASPAG — Ginecologia Pediátrica e do Adolescente</a></li><li><a href="https://www.acog.org/womens-health/faqs/dysmenorrhea-painful-periods" target="_blank" rel="noopener">ACOG — Cólicas menstruais</a></li><li><a href="https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2015/12/menstruation-in-girls-and-adolescents-using-the-menstrual-cycle-as-a-vital-sign" target="_blank" rel="noopener">ACOG — Ciclo menstrual na adolescência</a></li><li><a href="https://www.healthychildren.org/English/ages-stages/gradeschool/puberty/Pages/default.aspx" target="_blank" rel="noopener">American Academy of Pediatrics — Puberdade</a></li></ul></section>
+
+<footer>As estimativas são educativas e calculadas com seus próprios registros. Quanto mais ciclos completos forem registrados, melhor a média pessoal tende a ficar — mas ela nunca garante a data real da ovulação ou da próxima menstruação. Não use o calendário para evitar gravidez. Conteúdo revisado para educação menstrual de crianças e adolescentes.</footer>
 </main>
 
 <script>
 (function(){
 "use strict";
-const KEY="rhythmik-v5", OLD_KEY="rhythmik-v4";
+const KEY="rhythmik-v6", OLD_KEYS=["rhythmik-v5","rhythmik-v4"];
 const $=id=>document.getElementById(id);
 const el={
  cycleDay:$("cycleDay"),cycleText:$("cycleText"),cycleLength:$("cycleLength"),nextPeriod:$("nextPeriod"),currentPhase:$("currentPhase"),
  monthTitle:$("monthTitle"),calendar:$("calendar"),prev:$("prev"),next:$("next"),goToday:$("goToday"),
  selEmoji:$("selEmoji"),selTitle:$("selTitle"),selDate:$("selDate"),selDesc:$("selDesc"),selTips:$("selTips"),
- periodStart:$("periodStart"),periodEnd:$("periodEnd"),add:$("add"),notes:$("notes"),saveNotes:$("saveNotes"),history:$("history"),
- backup:$("backup"),restore:$("restore"),file:$("file"),clear:$("clear")
+ periodStart:$("periodStart"),periodEnd:$("periodEnd"),add:$("add"),notes:$("notes"),saveCheckin:$("saveCheckin"),checkSummary:$("checkSummary"),history:$("history"),
+ backup:$("backup"),restore:$("restore"),file:$("file"),clear:$("clear"),helpMessage:$("helpMessage"),copyHelp:$("copyHelp")
 };
-const seed={periods:[{start:"2026-08-10",end:"2026-08-17"},{start:"2026-09-02",end:null}],notes:""};
+const seed={periods:[{start:"2026-08-10",end:"2026-08-17"},{start:"2026-09-02",end:null}],notes:"",checkins:{}};
 let data=load();
 let now=new Date(), view=new Date(now.getFullYear(),now.getMonth(),1), selected=new Date(now.getFullYear(),now.getMonth(),now.getDate());
 
@@ -144,8 +134,8 @@ function parse(s){const a=s.split("-").map(Number);return new Date(a[0],a[1]-1,a
 function diff(a,b){return Math.round((new Date(b.getFullYear(),b.getMonth(),b.getDate())-new Date(a.getFullYear(),a.getMonth(),a.getDate()))/86400000)}
 function fmt(d){return d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit",year:"numeric"})}
 function monthName(d){return d.toLocaleDateString("pt-BR",{month:"long",year:"numeric"}).replace(/^./,c=>c.toUpperCase())}
-function normalize(x){let p=(x.periods||[]).map(v=>typeof v==="string"?{start:v,end:null}:{start:v.start,end:v.end||null}).filter(v=>v.start);p.sort((a,b)=>a.start.localeCompare(b.start));return {periods:p,notes:x.notes||""}}
-function load(){try{let raw=localStorage.getItem(KEY)||localStorage.getItem(OLD_KEY);if(raw){let x=JSON.parse(raw);if(Array.isArray(x.periods))return normalize(x)}}catch(e){}return normalize(seed)}
+function normalize(x){let p=(x.periods||[]).map(v=>typeof v==="string"?{start:v,end:null}:{start:v.start,end:v.end||null}).filter(v=>v.start);p.sort((a,b)=>a.start.localeCompare(b.start));return {periods:p,notes:x.notes||"",checkins:x.checkins&&typeof x.checkins==="object"?x.checkins:{}}}
+function load(){try{let raw=localStorage.getItem(KEY);if(!raw){for(const key of OLD_KEYS){raw=localStorage.getItem(key);if(raw)break}}if(raw){let x=JSON.parse(raw);if(Array.isArray(x.periods))return normalize(x)}}catch(e){}return normalize(seed)}
 function save(){localStorage.setItem(KEY,JSON.stringify(data))}
 function periods(){return data.periods.slice().sort((a,b)=>a.start.localeCompare(b.start))}
 function cycleLengths(){let p=periods(),g=[];for(let i=1;i<p.length;i++){let n=diff(parse(p[i-1].start),parse(p[i].start));if(n>=15&&n<=90)g.push(n)}return g}
@@ -167,7 +157,7 @@ function renderTop(){
  el.cycleDay.textContent="Dia "+e.day;el.cycleText.textContent="Estimativa personalizada com os seus registros.";
  el.cycleLength.textContent=avgCycle()+" dias"+(cycleLengths().length?" (média)":" (estimativa)");
  el.currentPhase.textContent=e.emoji+" "+e.phase;
- const n=parse(p[p.length-1].start);n.setDate(n.getDate()+avgCycle());el.nextPeriod.textContent=fmt(n);
+ const n=parse(p[p.length-1].start);n.setDate(n.getDate()+avgCycle());el.nextPeriod.textContent="Por volta de "+fmt(n);
 }
 function makeDay(d,out){
  const b=document.createElement("button");b.type="button";b.className="day"+(out?" muted-day":"");
@@ -192,17 +182,22 @@ function renderHistory(){
  const p=periods();if(!p.length){el.history.innerHTML='<p class="muted">Nenhum registro ainda. Quando você adicionar uma menstruação, ele aparecerá aqui.</p>';return}
  el.history.innerHTML=p.slice().reverse().map((x)=>{const i=p.findIndex(y=>y.start===x.start),n=p[i+1],cycle=n?diff(parse(x.start),parse(n.start))+" dias de ciclo":"ciclo atual",dur=x.end?(diff(parse(x.start),parse(x.end))+1)+" dias de sangramento":"término não informado";return '<div class="history"><div><strong>'+fmt(parse(x.start))+'</strong><div><small>'+dur+'</small></div></div><div><small>'+cycle+'</small></div></div>'}).join("");
 }
-function renderNotes(){el.notes.value=data.notes||""}
-function renderAll(){renderTop();renderCalendar();selectDay(selected);renderHistory();renderNotes()}
+function checked(name){const x=document.querySelector('input[name="'+name+'"]:checked');return x?x.value:""}
+function setChecked(name,value){document.querySelectorAll('input[name="'+name+'"]').forEach(x=>x.checked=x.value===value)}
+function renderCheckin(){const c=data.checkins[iso(new Date())]||{};["mood","energy","appetite","thirst","sleep","cramps"].forEach(k=>setChecked(k,c[k]||""));$("sweet").checked=!!c.sweet;el.notes.value=c.note||(data.notes||"");el.checkSummary.textContent=c.savedAt?"Último check-in salvo hoje. Seu corpo deixou mais uma pista. 💜":""}
+function renderAll(){renderTop();renderCalendar();selectDay(selected);renderHistory();renderCheckin()}
 el.add.addEventListener("click",()=>{const s=el.periodStart.value,e=el.periodEnd.value;if(!s)return alert("Escolha a data em que começou.");if(e&&e<s)return alert("A data de término não pode ser anterior ao início.");const f=data.periods.find(p=>p.start===s);if(f)f.end=e||f.end;else data.periods.push({start:s,end:e||null});data.periods.sort((a,b)=>a.start.localeCompare(b.start));save();selected=parse(s);renderAll();alert("Registro adicionado ao seu ritmo! 🩷")});
-el.saveNotes.addEventListener("click",()=>{data.notes=el.notes.value;save();alert("Observação salva. 💜")});
+el.saveCheckin.addEventListener("click",()=>{const today=iso(new Date());data.checkins[today]={mood:checked("mood"),energy:checked("energy"),appetite:checked("appetite"),sweet:$("sweet").checked,thirst:checked("thirst"),sleep:checked("sleep"),cramps:checked("cramps"),note:el.notes.value.trim(),savedAt:new Date().toISOString()};data.notes="";save();renderCheckin();alert("Check-in completo! Seu corpo deixou mais uma pista. 💜")});
 el.prev.addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCalendar()});
 el.next.addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCalendar()});
 el.goToday.addEventListener("click",()=>{const d=new Date();view=new Date(d.getFullYear(),d.getMonth(),1);selectDay(d)});
 el.backup.addEventListener("click",()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="rhythmik-backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)});
 el.restore.addEventListener("click",()=>el.file.click());
 el.file.addEventListener("change",async()=>{try{const x=JSON.parse(await el.file.files[0].text());if(!Array.isArray(x.periods))throw new Error();data=normalize(x);save();renderAll();alert("Backup restaurado! 🌷")}catch(e){alert("Não consegui ler esse backup.")}el.file.value=""});
-el.clear.addEventListener("click",()=>{if(confirm("Apagar todos os registros deste aparelho?")){data={periods:[],notes:""};save();renderAll()}});
+el.clear.addEventListener("click",()=>{if(confirm("Apagar menstruações, check-ins e observações deste aparelho? Esta ação não pode ser desfeita.")){data={periods:[],notes:"",checkins:{}};save();renderAll()}});
+const helpTexts={pain:"Estou com uma dor forte e preciso da sua ajuda. Ela está atrapalhando minhas atividades.",bleeding:"Meu sangramento está muito forte e preciso que você me ajude a buscar orientação de saúde.",scared:"Estou assustada com uma mudança no meu corpo. Você pode conversar comigo e me ajudar?",sad:"Estou me sentindo muito triste e preciso conversar com você agora.",first:"Minha menstruação começou. Preciso da sua ajuda para conseguir um absorvente e entender o que fazer."};
+document.querySelectorAll("[data-help]").forEach(b=>b.addEventListener("click",()=>{el.helpMessage.textContent=helpTexts[b.dataset.help];el.helpMessage.classList.remove("hidden");el.copyHelp.classList.remove("hidden")}));
+el.copyHelp.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(el.helpMessage.textContent);el.copyHelp.textContent="Mensagem copiada ✓";setTimeout(()=>el.copyHelp.textContent="Copiar mensagem",1600)}catch(e){alert("Selecione a mensagem e copie para mostrar a um adulto.")}});
 renderAll();
 setInterval(()=>{const d=new Date();if(iso(d)!==iso(selected)&&d.getHours()>=0){selected=new Date(d.getFullYear(),d.getMonth(),d.getDate());view=new Date(d.getFullYear(),d.getMonth(),1);renderAll()}},60000);
 if("serviceWorker"in navigator)navigator.serviceWorker.register("./sw.js").catch(()=>{});
