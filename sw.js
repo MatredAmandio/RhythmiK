@@ -1,4 +1,4 @@
-const CACHE = "rhythmik-v6";
+const CACHE = "rhythmik-v6-calendar";
 const SHELL = ["./", "./index.html", "./manifest.webmanifest", "./icon.svg"];
 
 self.addEventListener("install", event => {
