@@ -17,9 +17,9 @@ h2{font-size:20px;margin:0 0 9px}h3{font-size:17px;margin:0 0 3px}.kicker{font-s
 .btn{border:0;border-radius:13px;padding:11px 14px;background:var(--pink);color:#140912;font-weight:900;cursor:pointer}.secondary{background:#21182a;color:#fff;border:1px solid var(--border)}.danger{background:#32151f;color:#ff9cb9;border:1px solid #63283b}.actions{display:flex;gap:8px;flex-wrap:wrap}
 input,textarea{font:inherit}input[type=date],textarea{width:100%;border:1px solid var(--border);border-radius:13px;padding:11px;background:#0d0a11;color:var(--text)}textarea{min-height:82px;resize:vertical}.field{margin:8px 0}.field label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px}
 .calendar-head{display:flex;align-items:center;justify-content:space-between;margin:13px 0}.nav{display:flex;gap:6px}.icon{width:38px;height:38px;border:1px solid var(--border);background:#17101f;color:#fff;border-radius:11px;cursor:pointer;font-size:20px}
-.week,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.week div{text-align:center;color:#877a8c;font-size:11px;padding:3px}.day{min-height:50px;border:1px solid #2b2132;background:#100b15;border-radius:11px;padding:5px;text-align:left;cursor:pointer;color:var(--text)}.day.muted-day{opacity:.3}.day.today{outline:2px solid var(--pink);outline-offset:-2px}.day.period{background:#341324;border-color:#b83b79}.day.selected{box-shadow:0 0 0 3px #a96cff55 inset}.num{font-size:13px;font-weight:800}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-top:5px}.period-dot{background:var(--pink)}.estimate-dot{background:var(--violet)}
+.week,.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.week div{text-align:center;color:#877a8c;font-size:11px;padding:3px}.day{min-height:50px;border:1px solid #2b2132;background:#100b15;border-radius:11px;padding:5px;text-align:left;cursor:pointer;color:var(--text)}.day.muted-day{opacity:.3}.day.today{outline:2px solid var(--pink);outline-offset:-2px}.day.period{background:#341324;border-color:#b83b79}.day.selected{box-shadow:0 0 0 3px #a96cff55 inset}.day.pick-start{box-shadow:0 0 0 3px var(--gold) inset}.day.future-disabled{opacity:.25;cursor:not-allowed}.num{font-size:13px;font-weight:800}.dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-top:5px}.period-dot{background:var(--pink)}.estimate-dot{background:var(--violet)}
 .phase{background:linear-gradient(145deg,#171020,#100b14);border:1px solid #3a2947;border-radius:17px;padding:15px}.phase-title{display:flex;gap:10px;align-items:center}.emoji{font-size:29px}.badge{display:inline-block;padding:6px 9px;border-radius:99px;font-size:11px;font-weight:800;background:#ffffff0d;border:1px solid #ffffff14;margin-top:7px}.pink{color:#ff8fc7}.violet{color:#c19aff}.gold{color:#ffe083}.blue{color:#93e0ff}.green{color:#8ce2b7}
-ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-size:12px;color:#a99eae;background:#ffffff07;padding:11px;border-radius:13px;margin-top:10px;border:1px solid #ffffff0a}.history{padding:13px 0;border-bottom:1px solid #2b2132;display:flex;justify-content:space-between;gap:12px}.history:last-child{border:0}.history strong{color:#ffb1d5}.history small{color:var(--muted)}.hidden{display:none}footer{text-align:center;color:#8f8394;font-size:12px;line-height:1.55;padding:12px 6px}
+ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-size:12px;color:#a99eae;background:#ffffff07;padding:11px;border-radius:13px;margin-top:10px;border:1px solid #ffffff0a}.period-tools{margin-top:12px;padding:12px;border:1px solid #ff4fa344;border-radius:15px;background:#ff4fa30b}.period-status{margin:9px 0 0;color:#ffd0e6;font-size:13px;line-height:1.45}.history{padding:13px 0;border-bottom:1px solid #2b2132;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.history:last-child{border:0}.history strong{color:#ffb1d5}.history small{color:var(--muted)}.history-actions{display:flex;justify-content:flex-end;gap:5px;flex-wrap:wrap}.mini-btn{border:1px solid var(--border);border-radius:9px;padding:6px 8px;background:#21182a;color:#fff;font-size:11px;font-weight:700;cursor:pointer}.mini-btn.delete{color:#ff9cb9;border-color:#63283b;background:#32151f}.hidden{display:none!important}footer{text-align:center;color:#8f8394;font-size:12px;line-height:1.55;padding:12px 6px}
 @media(max-width:480px){main{padding:11px 9px}.card{padding:14px}.grid{grid-template-columns:1fr 1fr}.stat:last-child{grid-column:1/-1}.day{min-height:46px}}
 
 .phase-card{cursor:pointer;transition:.2s ease}.phase-card:hover{border-color:#6a426f}.phase-card .phase-detail{display:none;margin-top:12px;padding-top:12px;border-top:1px solid #ffffff12}.phase-card.open .phase-detail{display:block}.phase-card .chev{float:right;opacity:.65;font-size:14px}.phase-detail h4{margin:10px 0 5px;font-size:13px}.phase-detail p,.phase-detail li{font-size:13px;line-height:1.55}.phase-detail ul{padding-left:20px;margin:6px 0}.rhythmik-line{color:#ff8fc7;font-weight:700}
@@ -38,7 +38,8 @@ ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-s
 <section class="card"><h2>📅 Calendário do seu ritmo</h2><p class="muted">Ele se atualiza com a data de hoje. Toque em qualquer dia para ver a fase estimada com base nos seus próprios registros.</p>
 <div class="calendar-head"><strong id="monthTitle">Calendário</strong><div class="nav"><button class="icon" id="prev" type="button">‹</button><button class="icon" id="goToday" type="button">•</button><button class="icon" id="next" type="button">›</button></div></div>
 <div class="week"><div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div></div><div class="calendar" id="calendar"></div>
-<p class="muted" style="font-size:12px">🩷 Menstruação registrada · 🟣 fase estimada</p></section>
+<p class="muted" style="font-size:12px">🩷 Menstruação registrada · 🟣 fase estimada</p>
+<div class="period-tools"><div class="actions"><button class="btn" id="startPeriod" type="button">🩷 Registrar menstruação</button><button class="btn secondary hidden" id="cancelPeriod" type="button">Cancelar seleção</button><button class="btn secondary hidden" id="undoPeriod" type="button">Desfazer</button></div><p class="period-status hidden" id="periodStatus" aria-live="polite"></p></div></section>
 
 <section class="card"><div class="phase"><div class="phase-title"><span class="emoji" id="selEmoji">🎧</span><div><h3 id="selTitle">Escolha uma data</h3><div class="muted" id="selDate">—</div></div></div><p class="muted" id="selDesc">Toque em um dia do calendário para acompanhar a sua própria batida/fluxo.</p><div id="selTips"></div></div></section>
 
@@ -79,9 +80,6 @@ ul{margin:8px 0;padding-left:20px}li{margin:6px 0;line-height:1.4}.notice{font-s
 <p class="rhythmik-line">🎧 RhythmiK: “Nova era, mesma estrela: você. Seu ritmo não precisa copiar o de ninguém.”</p></div></div>
 <div class="notice"><b>Você está crescendo.</b> Nos primeiros anos, os ciclos podem variar. As datas do RhythmiK são estimativas educativas, não promessas.</div></section>
 
-<section class="card"><h2>🩷 Registrar menstruação</h2><p class="muted">Marque o primeiro dia do sangramento. Se souber, informe também quando terminou.</p>
-<div class="field"><label for="periodStart">Começou em</label><input type="date" id="periodStart"></div><div class="field"><label for="periodEnd">Terminou em (opcional)</label><input type="date" id="periodEnd"></div><div class="actions"><button class="btn" id="add" type="button">Adicionar ao meu ritmo</button></div></section>
-
 <section class="card"><div class="kicker">Check-in de 10 segundos</div><h2>🎤 Como está o seu mood hoje?</h2><p class="muted">Marque apenas o que quiser. Não existe resposta certa.</p>
 <div class="check-grid">
 <fieldset class="check-group"><legend>😊 Humor</legend><div class="choices"><label class="choice"><input type="radio" name="mood" value="tranquila"><span>😌 Tranquila</span></label><label class="choice"><input type="radio" name="mood" value="sensivel"><span>🥺 Sensível</span></label><label class="choice"><input type="radio" name="mood" value="irritada"><span>😤 Irritada</span></label></div></fieldset>
@@ -121,12 +119,13 @@ const el={
  cycleDay:$("cycleDay"),cycleText:$("cycleText"),cycleLength:$("cycleLength"),nextPeriod:$("nextPeriod"),currentPhase:$("currentPhase"),
  monthTitle:$("monthTitle"),calendar:$("calendar"),prev:$("prev"),next:$("next"),goToday:$("goToday"),
  selEmoji:$("selEmoji"),selTitle:$("selTitle"),selDate:$("selDate"),selDesc:$("selDesc"),selTips:$("selTips"),
- periodStart:$("periodStart"),periodEnd:$("periodEnd"),add:$("add"),notes:$("notes"),saveCheckin:$("saveCheckin"),checkSummary:$("checkSummary"),history:$("history"),
+ startPeriod:$("startPeriod"),cancelPeriod:$("cancelPeriod"),undoPeriod:$("undoPeriod"),periodStatus:$("periodStatus"),notes:$("notes"),saveCheckin:$("saveCheckin"),checkSummary:$("checkSummary"),history:$("history"),
  backup:$("backup"),restore:$("restore"),file:$("file"),clear:$("clear"),helpMessage:$("helpMessage"),copyHelp:$("copyHelp")
 };
 const seed={periods:[],notes:"",checkins:{}};
 let data=load();
 let now=new Date(), view=new Date(now.getFullYear(),now.getMonth(),1), selected=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+let periodMode=null,pendingStart=null,editTarget=null,undoPeriods=null;
 
 function pad(n){return String(n).padStart(2,"0")}
 function iso(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
@@ -142,7 +141,7 @@ function cycleLengths(){let p=periods(),g=[];for(let i=1;i<p.length;i++){let n=d
 function avgCycle(){let g=cycleLengths();return g.length?Math.max(21,Math.min(45,Math.round(g.reduce((a,b)=>a+b,0)/g.length))):28}
 function avgBleeding(){let x=periods().filter(p=>p.end).map(p=>diff(parse(p.start),parse(p.end))+1).filter(n=>n>=1&&n<=10);return x.length?Math.round(x.reduce((a,b)=>a+b,0)/x.length):5}
 function anchorFor(d){let a=null;for(const p of periods()){const s=parse(p.start);if(s<=d)a=p;else break}return a}
-function periodOn(d){for(const p of periods()){const s=parse(p.start),e=p.end?parse(p.end):null;if(diff(s,d)>=0&&(e?diff(d,e)>=0:diff(s,d)<avgBleeding()))return true}return false}
+function periodOn(d){const today=parse(iso(new Date()));for(const p of periods()){const s=parse(p.start),e=p.end?parse(p.end):today;if(diff(s,d)>=0&&diff(d,e)>=0)return true}return false}
 function estimate(d){
  const a=anchorFor(d);if(!a)return null;
  const avg=avgCycle(),day=((diff(parse(a.start),d)%avg)+avg)%avg+1,ov=Math.max(10,avg-14);
@@ -161,9 +160,9 @@ function renderTop(){
 }
 function makeDay(d,out){
  const b=document.createElement("button");b.type="button";b.className="day"+(out?" muted-day":"");
- const s=iso(d),e=estimate(d);if(s===iso(new Date()))b.classList.add("today");if(s===iso(selected))b.classList.add("selected");if(periodOn(d))b.classList.add("period");
+ const s=iso(d),e=estimate(d),future=s>iso(new Date());if(s===iso(new Date()))b.classList.add("today");if(s===iso(selected))b.classList.add("selected");if(periodOn(d))b.classList.add("period");if(s===pendingStart)b.classList.add("pick-start");if(periodMode&&future)b.classList.add("future-disabled");
  b.innerHTML='<div class="num">'+d.getDate()+'</div>'+(periodOn(d)?'<span class="dot period-dot"></span>':e?'<span class="dot estimate-dot"></span>':'');
- b.addEventListener("click",()=>selectDay(d));return b;
+ b.addEventListener("click",()=>periodMode?choosePeriodDay(d):selectDay(d));return b;
 }
 function renderCalendar(){
  const y=view.getFullYear(),m=view.getMonth(),first=new Date(y,m,1),start=first.getDay(),days=new Date(y,m+1,0).getDate(),prevDays=new Date(y,m,0).getDate();
@@ -180,13 +179,39 @@ function selectDay(d){
 }
 function renderHistory(){
  const p=periods();if(!p.length){el.history.innerHTML='<p class="muted">Nenhum registro ainda. Quando você adicionar uma menstruação, ele aparecerá aqui.</p>';return}
- el.history.innerHTML=p.slice().reverse().map((x)=>{const i=p.findIndex(y=>y.start===x.start),n=p[i+1],cycle=n?diff(parse(x.start),parse(n.start))+" dias de ciclo":"ciclo atual",dur=x.end?(diff(parse(x.start),parse(x.end))+1)+" dias de sangramento":"término não informado";return '<div class="history"><div><strong>'+fmt(parse(x.start))+'</strong><div><small>'+dur+'</small></div></div><div><small>'+cycle+'</small></div></div>'}).join("");
+ el.history.innerHTML=p.slice().reverse().map((x)=>{const i=p.findIndex(y=>y.start===x.start),n=p[i+1],cycle=n?diff(parse(x.start),parse(n.start))+" dias de ciclo":"ciclo atual",dur=x.end?(diff(parse(x.start),parse(x.end))+1)+" dias de sangramento":"em andamento";return '<div class="history"><div><strong>'+fmt(parse(x.start))+'</strong><div><small>'+dur+' · '+cycle+'</small></div></div><div class="history-actions">'+(!x.end?'<button class="mini-btn" type="button" data-period-action="end" data-start="'+x.start+'">Registrar término</button>':'')+'<button class="mini-btn" type="button" data-period-action="edit-start" data-start="'+x.start+'">Alterar início</button>'+(x.end?'<button class="mini-btn" type="button" data-period-action="edit-end" data-start="'+x.start+'">Alterar término</button>':'')+'<button class="mini-btn delete" type="button" data-period-action="delete" data-start="'+x.start+'">Excluir</button></div></div>'}).join("");
+}
+function ongoingPeriod(){return periods().slice().reverse().find(x=>!x.end)||null}
+function rememberPeriods(){undoPeriods=JSON.stringify(data.periods)}
+function endPeriodMode(){periodMode=null;pendingStart=null;editTarget=null;renderAll()}
+function beginPeriodMode(mode,start){periodMode=mode;pendingStart=start||null;editTarget=start||null;renderAll()}
+function renderPeriodControls(){
+ const ongoing=ongoingPeriod();el.startPeriod.textContent=ongoing?"✅ Registrar término":"🩷 Registrar menstruação";
+ el.cancelPeriod.classList.toggle("hidden",!periodMode);el.undoPeriod.classList.toggle("hidden",!undoPeriods);el.periodStatus.classList.toggle("hidden",!periodMode);
+ const messages={start:"Toque no calendário no primeiro dia do sangramento.",end:"Início salvo em "+(pendingStart?fmt(parse(pendingStart)):"—")+". Agora toque no último dia do sangramento.","edit-start":"Toque na data correta de início.","edit-end":"Toque na data correta de término."};
+ el.periodStatus.textContent=messages[periodMode]||"";
+}
+function choosePeriodDay(d){
+ const chosen=iso(d),today=iso(new Date());if(chosen>today)return alert("Escolha hoje ou uma data anterior.");
+ if(periodMode==="start"){
+  if(data.periods.some(x=>x.start===chosen))return alert("Essa data já está registrada.");rememberPeriods();data.periods.push({start:chosen,end:null});data.periods.sort((a,b)=>a.start.localeCompare(b.start));save();selected=parse(chosen);periodMode=null;pendingStart=null;renderAll();return alert("Início salvo! Quando o sangramento terminar, volte ao calendário para registrar o último dia. 🩷");
+ }
+ const record=data.periods.find(x=>x.start===editTarget);if(!record)return endPeriodMode();
+ if(periodMode==="end"||periodMode==="edit-end"){
+  if(chosen<record.start)return alert("O término não pode ser anterior ao início.");rememberPeriods();record.end=chosen;save();selected=parse(chosen);periodMode=null;pendingStart=null;editTarget=null;renderAll();return alert("Período salvo no seu ritmo! 🩷");
+ }
+ if(periodMode==="edit-start"){
+  if(record.end&&chosen>record.end)return alert("O início não pode ser posterior ao término.");if(data.periods.some(x=>x!==record&&x.start===chosen))return alert("Essa data já está registrada.");rememberPeriods();record.start=chosen;data.periods.sort((a,b)=>a.start.localeCompare(b.start));save();selected=parse(chosen);periodMode=null;pendingStart=null;editTarget=null;renderAll();alert("Data de início corrigida. ✓");
+ }
 }
 function checked(name){const x=document.querySelector('input[name="'+name+'"]:checked');return x?x.value:""}
 function setChecked(name,value){document.querySelectorAll('input[name="'+name+'"]').forEach(x=>x.checked=x.value===value)}
 function renderCheckin(){const c=data.checkins[iso(new Date())]||{};["mood","energy","appetite","thirst","sleep","cramps"].forEach(k=>setChecked(k,c[k]||""));$("sweet").checked=!!c.sweet;el.notes.value=c.note||(data.notes||"");el.checkSummary.textContent=c.savedAt?"Último check-in salvo hoje. Seu corpo deixou mais uma pista. 💜":""}
-function renderAll(){renderTop();renderCalendar();selectDay(selected);renderHistory();renderCheckin()}
-el.add.addEventListener("click",()=>{const s=el.periodStart.value,e=el.periodEnd.value;if(!s)return alert("Escolha a data em que começou.");if(e&&e<s)return alert("A data de término não pode ser anterior ao início.");const f=data.periods.find(p=>p.start===s);if(f)f.end=e||f.end;else data.periods.push({start:s,end:e||null});data.periods.sort((a,b)=>a.start.localeCompare(b.start));save();selected=parse(s);renderAll();alert("Registro adicionado ao seu ritmo! 🩷")});
+function renderAll(){renderTop();renderCalendar();selectDay(selected);renderHistory();renderCheckin();renderPeriodControls()}
+el.startPeriod.addEventListener("click",()=>{const ongoing=ongoingPeriod();if(ongoing)beginPeriodMode("end",ongoing.start);else beginPeriodMode("start")});
+el.cancelPeriod.addEventListener("click",endPeriodMode);
+el.undoPeriod.addEventListener("click",()=>{if(!undoPeriods)return;data.periods=JSON.parse(undoPeriods);undoPeriods=null;save();periodMode=null;pendingStart=null;editTarget=null;renderAll()});
+el.history.addEventListener("click",event=>{const b=event.target.closest("[data-period-action]");if(!b)return;const action=b.dataset.periodAction,start=b.dataset.start;if(action==="delete"){if(confirm("Excluir este registro do histórico?")){rememberPeriods();data.periods=data.periods.filter(x=>x.start!==start);save();renderAll()}return}if(action==="end")beginPeriodMode("end",start);if(action==="edit-start")beginPeriodMode("edit-start",start);if(action==="edit-end")beginPeriodMode("edit-end",start)});
 el.saveCheckin.addEventListener("click",()=>{const today=iso(new Date());data.checkins[today]={mood:checked("mood"),energy:checked("energy"),appetite:checked("appetite"),sweet:$("sweet").checked,thirst:checked("thirst"),sleep:checked("sleep"),cramps:checked("cramps"),note:el.notes.value.trim(),savedAt:new Date().toISOString()};data.notes="";save();renderCheckin();alert("Check-in completo! Seu corpo deixou mais uma pista. 💜")});
 el.prev.addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCalendar()});
 el.next.addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCalendar()});
