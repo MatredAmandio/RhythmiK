@@ -194,7 +194,7 @@ function renderPeriodControls(){
 function choosePeriodDay(d){
  const chosen=iso(d),today=iso(new Date());if(chosen>today)return alert("Escolha hoje ou uma data anterior.");
  if(periodMode==="start"){
-  if(data.periods.some(x=>x.start===chosen))return alert("Essa data já está registrada.");rememberPeriods();data.periods.push({start:chosen,end:null});data.periods.sort((a,b)=>a.start.localeCompare(b.start));save();selected=parse(chosen);periodMode=null;pendingStart=null;renderAll();return alert("Início salvo! Quando o sangramento terminar, volte ao calendário para registrar o último dia. 🩷");
+  const latest=periods().slice(-1)[0];if(latest&&chosen<=latest.start)return alert("Escolha uma data depois do seu registro mais recente. Para corrigir um ciclo antigo, use o histórico.");rememberPeriods();data.periods.push({start:chosen,end:null});data.periods.sort((a,b)=>a.start.localeCompare(b.start));save();selected=parse(chosen);periodMode=null;pendingStart=null;renderAll();return alert("Início salvo! Quando o sangramento terminar, volte ao calendário para registrar o último dia. 🩷");
  }
  const record=data.periods.find(x=>x.start===editTarget);if(!record)return endPeriodMode();
  if(periodMode==="end"||periodMode==="edit-end"){
