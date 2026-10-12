@@ -217,8 +217,35 @@ el.prev.addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getM
 el.next.addEventListener("click",()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCalendar()});
 el.goToday.addEventListener("click",()=>{const d=new Date();view=new Date(d.getFullYear(),d.getMonth(),1);selectDay(d)});
 el.backup.addEventListener("click",()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="rhythmik-backup.json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),500)});
-el.restore.addEventListener("click",()=>el.file.click());
-el.file.addEventListener("change",async()=>{try{const x=JSON.parse(await el.file.files[0].text());if(!Array.isArray(x.periods))throw new Error();data=normalize(x);save();renderAll();alert("Backup restaurado! 🌷")}catch(e){alert("Não consegui ler esse backup.")}el.file.value=""});
+el.restore.addEventListener("click",()=>{try{el.file.click()}catch(e){alert("Não foi possível abrir os arquivos. Tente novamente pelo navegador.")}});
+el.file.addEventListener("change",async()=>{
+ const file=el.file.files&&el.file.files[0];
+ if(!file){el.file.value="";return}
+ try{
+  const text=await new Promise((resolve,reject)=>{
+   if(typeof file.text==="function"){
+    file.text().then(resolve).catch(()=>readWithFileReader(file,resolve,reject));
+   }else readWithFileReader(file,resolve,reject);
+  });
+  let parsed;
+  try{parsed=JSON.parse(text)}catch(e){throw new Error("O arquivo não é um JSON válido. Selecione o backup original do RhythmiK.")}
+  const candidate=parsed&&Array.isArray(parsed.periods)?parsed:
+   parsed&&parsed.data&&Array.isArray(parsed.data.periods)?parsed.data:
+   parsed&&parsed.payload&&Array.isArray(parsed.payload.periods)?parsed.payload:null;
+  if(!candidate)throw new Error("Este arquivo não contém uma lista de registros compatível com o backup do RhythmiK.");
+  const imported=normalize(candidate);
+  if(imported.periods.some(p=>typeof p.start!=="string"||!/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(p.start)||Number.isNaN(Date.parse(p.start+"T00:00:00"))))
+   throw new Error("O backup contém uma data inválida. Seus dados atuais foram mantidos.");
+  const previous=data;
+  try{data=imported;save()}catch(e){data=previous;throw new Error("Não foi possível salvar os dados restaurados neste aparelho. Seus dados anteriores foram mantidos.")}
+  renderAll();
+  alert("Backup restaurado com sucesso! 🌷");
+ }catch(e){alert(e&&e.message?e.message:"Não consegui ler esse backup. Seus dados atuais foram mantidos.")}
+ finally{el.file.value=""}
+});
+function readWithFileReader(file,resolve,reject){
+ try{const reader=new FileReader();reader.onload=()=>resolve(String(reader.result||""));reader.onerror=()=>reject(new Error("Não foi possível ler o arquivo selecionado."));reader.onabort=()=>reject(new Error("A leitura do arquivo foi cancelada."));reader.readAsText(file,"UTF-8")}catch(e){reject(e)}
+}
 el.clear.addEventListener("click",()=>{if(confirm("Apagar menstruações, check-ins e observações deste aparelho? Esta ação não pode ser desfeita.")){data={periods:[],notes:"",checkins:{}};save();renderAll()}});
 const helpTexts={pain:"Estou com uma dor forte e preciso da sua ajuda. Ela está atrapalhando minhas atividades.",bleeding:"Meu sangramento está muito forte e preciso que você me ajude a buscar orientação de saúde.",scared:"Estou assustada com uma mudança no meu corpo. Você pode conversar comigo e me ajudar?",sad:"Estou me sentindo muito triste e preciso conversar com você agora.",first:"Minha menstruação começou. Preciso da sua ajuda para conseguir um absorvente e entender o que fazer."};
 document.querySelectorAll("[data-help]").forEach(b=>b.addEventListener("click",()=>{el.helpMessage.textContent=helpTexts[b.dataset.help];el.helpMessage.classList.remove("hidden");el.copyHelp.classList.remove("hidden")}));
